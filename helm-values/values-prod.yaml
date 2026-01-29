@@ -13,21 +13,6 @@ resources:
     memory: "512Mi"
     cpu: "500m"
 
-healthCheck:
-  enable: true
-  livenessProbe:
-    httpGet:
-      path: /actuator/health
-      port: 8080
-    initialDelaySeconds: 90
-    periodSeconds: 10
-  readinessProbe:
-    httpGet:
-      path: /actuator/health
-      port: 8080
-    initialDelaySeconds: 60
-    periodSeconds: 10
-
 volumeMounts:
   - name: application-properties-config-volume
     mountPath: /config/application.properties

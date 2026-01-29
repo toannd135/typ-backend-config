@@ -19,14 +19,14 @@ healthCheck:
     httpGet:
       path: /actuator/health
       port: 8080
-    initialDelaySeconds: 60
+    initialDelaySeconds: 90
     periodSeconds: 10
   readinessProbe:
     httpGet:
       path: /actuator/health
       port: 8080
-    initialDelaySeconds: 30
-    periodSeconds: 5
+    initialDelaySeconds: 60
+    periodSeconds: 10
 
 volumeMounts:
   - name: application-properties-config-volume
